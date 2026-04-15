@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WPB — Web Page Builder</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="app-header">
+    <div class="header-brand">
+      <span class="header-logo">WPB</span>
+      <span class="header-tagline">Web Page Builder</span>
+    </div>
+  </header>
+
+  <!-- Main split layout -->
+  <main id="app-main">
+
+    <!-- Left Panel -->
+    <section id="left-panel">
+
+      <!-- Prompt area (placeholder) -->
+      <div id="prompt-area">
+        <div class="panel-label">
+          <i data-lucide="sparkles" class="icon"></i>
+          AI 프롬프트
+        </div>
+        <textarea
+          id="prompt-input"
+          placeholder="원하는 웹페이지를 자연어로 설명하세요…"
+          rows="4"
+        ></textarea>
+        <button id="generate-btn" class="btn btn-primary" disabled>
+          <i data-lucide="zap" class="icon"></i>
+          생성
+        </button>
+      </div>
+
+      <!-- Code editor area (placeholder) -->
+      <div id="editor-area">
+        <div class="editor-tabs">
+          <button class="tab-btn tab-active" data-lang="html">HTML</button>
+          <button class="tab-btn" data-lang="css">CSS</button>
+          <button class="tab-btn" data-lang="js">JS</button>
+        </div>
+        <div id="editor-placeholder" class="editor-placeholder">
+          <span class="editor-placeholder-text">에디터 로딩 중…</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Right Panel -->
+    <section id="right-panel">
+      <div class="panel-label">
+        <i data-lucide="monitor" class="icon"></i>
+        미리보기
+      </div>
+      <div id="preview-container">
+        <iframe
+          id="preview-frame"
+          sandbox="allow-scripts"
+          title="미리보기"
+        ></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Lucide 아이콘 초기화 (JS 모듈 연결 전 단독 초기화)
+    if (window.lucide) lucide.createIcons();
+  </script>
+
+</body>
+</html>
