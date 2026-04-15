@@ -83,19 +83,7 @@
     if (window.lucide) lucide.createIcons();
   </script>
 
-  <!--
-    editor.js 직접 초기화 (임시):
-    추후 app.js가 생성되면 이 인라인 스크립트를 제거하고
-    app.js에서 initEditors(onChangeCallback)를 호출하도록 이전한다.
-  -->
-  <script type="module">
-    import { initEditors } from './editor.js';
-
-    initEditors((type, value) => {
-      // TODO (step 2): app.js의 state 업데이트 및 preview 갱신 연결
-      console.log(`[editor] ${type} changed:`, value.length, 'chars');
-    });
-  </script>
+  <script type="module" src="app.js"></script>
 
 </body>
 </html>
