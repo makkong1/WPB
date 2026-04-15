@@ -23,7 +23,8 @@
       "name": "state-preview",
       "status": "completed",
       "started_at": "2026-04-15T21:26:31+0900",
-      "summary": "app.js(SSOT state, setState/getState, 300ms debounce) + preview.js(srcdoc 렌더링) 생성 완료, 에디터-상태-미리보기 통합 동작"
+      "summary": "app.js(SSOT state, setState/getState, 300ms debounce) + preview.js(srcdoc 렌더링) 생성 완료, 에디터-상태-미리보기 통합 동작",
+      "completed_at": "2026-04-15T21:27:47+0900"
     },
     {
       "step": 3,
