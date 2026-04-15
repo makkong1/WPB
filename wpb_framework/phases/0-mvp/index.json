@@ -37,7 +37,10 @@
     {
       "step": 4,
       "name": "download",
-      "status": "pending"
+      "status": "completed",
+      "started_at": "2026-04-15T21:29:25+0900",
+      "summary": "download.js(Blob API, downloadHTML/CSS/JS) 생성, 다운로드 버튼 UI 추가, WPB MVP(AI생성+수동편집+미리보기+다운로드) 완성",
+      "completed_at": "2026-04-15T21:35:00+0900"
     }
   ],
   "created_at": "2026-04-15T21:21:50+0900"
