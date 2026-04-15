@@ -13,7 +13,9 @@
     {
       "step": 1,
       "name": "editor-setup",
-      "status": "pending"
+      "status": "completed",
+      "started_at": "2026-04-15T21:24:32+0900",
+      "summary": "editor.js(initEditors/getValue/setValue/switchTab API) + 탭 UI 생성 완료, Monaco 교체 가능한 추상 인터페이스 설계됨"
     },
     {
       "step": 2,
