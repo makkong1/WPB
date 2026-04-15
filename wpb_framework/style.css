@@ -51,6 +51,7 @@ body {
   height: var(--header-height);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 20px;
   background: var(--bg-panel);
   border-bottom: 1px solid var(--border);
@@ -269,4 +270,23 @@ body {
 
 .btn-primary:not(:disabled):hover {
   background: #4f51e8;
+}
+
+/* ── Download Section ───────────────────────────────────────── */
+#download-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-download {
+  background: var(--bg-panel);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.btn-download:hover {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
 }

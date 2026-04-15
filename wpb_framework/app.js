@@ -11,6 +11,7 @@ import { initEditors, setValue } from './editor.js';
 import { initPreview, renderPreview } from './preview.js';
 import { generateCode } from './api.js';
 import { parseAIResponse } from './parser.js';
+import { downloadHTML, downloadCSS, downloadJS } from './download.js';
 
 /**
  * 중앙 상태 객체 (SSOT).
@@ -116,6 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
       handleGenerate(prompt);
     });
   }
+
+  document.getElementById('download-html-btn').addEventListener('click', () => downloadHTML(getState()));
+  document.getElementById('download-css-btn').addEventListener('click', () => downloadCSS(getState()));
+  document.getElementById('download-js-btn').addEventListener('click', () => downloadJS(getState()));
 });
 
 export { setState, getState };
