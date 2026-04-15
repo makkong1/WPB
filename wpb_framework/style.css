@@ -1,0 +1,292 @@
+/* ============================================================
+   WPB — Web Page Builder
+   Global Styles & Premium Dark Theme
+   ============================================================ */
+
+/* ── CSS Custom Properties ─────────────────────────────────── */
+:root {
+  --bg-base: #0f172a;        /* slate-950: 최외곽 배경 */
+  --bg-panel: #1e293b;       /* slate-800: 패널 배경 */
+  --bg-deep: #020617;        /* slate-1000: 입력창 배경 */
+  --text-primary: #f8fafc;   /* slate-50 */
+  --text-muted: #94a3b8;     /* slate-400 */
+  --text-body: #cbd5e1;      /* slate-300 */
+  --accent-primary: #6366f1; /* indigo-500 */
+  --accent-success: #10b981; /* emerald-500 */
+  --accent-warning: #f59e0b; /* amber-500 */
+  --border: rgba(255, 255, 255, 0.1);
+
+  --header-height: 48px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+html {
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-base);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+#app-header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.header-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.header-logo {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.header-tagline {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ── Main Split Layout ──────────────────────────────────────── */
+#app-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+
+/* ── Left Panel ─────────────────────────────────────────────── */
+#left-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-panel);
+}
+
+/* ── Prompt Area ────────────────────────────────────────────── */
+#prompt-area {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+#prompt-input {
+  width: 100%;
+  background: var(--bg-deep);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.6;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#prompt-input::placeholder {
+  color: var(--text-muted);
+}
+
+#prompt-input:focus {
+  border-color: var(--accent-primary);
+}
+
+/* ── Editor Area ────────────────────────────────────────────── */
+#editor-area {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.editor-tabs {
+  display: flex;
+  gap: 2px;
+  padding: 8px 16px 0;
+  background: var(--bg-panel);
+  flex-shrink: 0;
+}
+
+.tab-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tab-btn:hover {
+  color: var(--text-body);
+}
+
+.tab-btn.tab-active {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+}
+
+/* ── Editor Container & Textarea ────────────────────────────── */
+#editor-container {
+  flex: 1;
+  overflow: hidden;
+  margin: 8px 16px 16px;
+  display: flex;
+}
+
+#editor-container textarea {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#editor-container textarea:focus {
+  border-color: var(--accent-primary);
+}
+
+/* ── Right Panel ────────────────────────────────────────────── */
+#right-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-base);
+  border-left: 1px solid var(--border);
+}
+
+#preview-container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  padding: 0 16px 16px;
+}
+
+#preview-frame {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+/* ── Shared ─────────────────────────────────────────────────── */
+.panel-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent-primary);
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+.btn-primary:not(:disabled):hover {
+  background: #4f51e8;
+}
+
+/* ── Download Section ───────────────────────────────────────── */
+#download-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-download {
+  background: var(--bg-panel);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.btn-download:hover {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+}
